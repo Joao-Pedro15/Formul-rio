@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Form-1</title>
+</head>
+<body>
+    <div class="container">
+        <div class="signup">
+            <div class="text">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start <br> jorney with us</p>
+                <button>Sign Up</button>
+            </div>
+        </div>
+        <div class="signin">
+            <div class="text2">
+                <h1>Create Account</h1>
+                <div class="midias">
+                    <div class="icon"><i class="fab fa-facebook-f"></i></div>
+                    <div class="icon"><i class="fab fa-google-plus-g"></i></div>
+                    <div class="icon"><i class="fab fa-linkedin-in"></i></div>
+                </div>
+                <p>Use your email for registration</p>
+                <div class="inputs">
+                    <div>
+                        <input type="text" required="">
+                        <label>Name</label>
+                    </div>
+
+                    <div>
+                        <input type="email" required="">
+                        <label>Email</label>
+                    </div>
+
+                    <div>
+                        <input type="password" required="">
+                        <label>Password</label>
+                    </div>
+                    <button>Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="arrows">
+        <i class="fas fa-chevron-left" onclick="arrowLeft()"></i>
+        <i class="fas fa-chevron-right" onclick="arrowRight()"></i>
+    </div>
+
+
+    <script>
+        let arrows = document.querySelector('.arrows')
+
+        function arrowRight(){
+            let signUp = document.querySelector('.signup')
+            let signIn = document.querySelector('.signin')
+            signUp.classList.toggle('active')
+            signIn.classList.remove('active')
+            arrows.classList.toggle('right')
+            arrows.classList.remove('left')
+        }
+        function arrowLeft(){
+            let signIn = document.querySelector('.signin')
+            let signUp = document.querySelector('.signup')
+            signIn.classList.toggle('active')
+            signUp.classList.remove('active')
+            arrows.classList.toggle('left')
+            arrows.classList.remove('right')
+
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    position: absolute;
+    width: 100%;
+    /* display: grid;
+    grid-template: auto/ 1.5fr 2fr;
+    transition: .5s; */
+
+}
+
+.signup{
+    position: fixed;
+    width: 42.79%;
+    height: 100vh;
+    background: linear-gradient(10deg, #219, #349);
+    display: inline-block;
+    text-align: center;
+    color: white;
+    transition: .5s;
+    top: 0;
+    left: 0;
+    
+
+}
+
+.signin{
+    position: fixed;
+    width: 57.21%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    color: #219;
+    transition: .5s;
+    right: 0;
+    top: 0;
+    background: white;
+    
+}
+
+.text{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: relative;
+    top: 30%;
+}
+
+.text2{
+    position: relative;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    top: 15%;
+}
+
+h1{
+    font-size: 50px;
+}
+
+p{
+    font-size: 13px;
+    font-weight: normal;
+}
+
+button{
+    width: 200px;
+    height: 40px;
+    font-weight: 900;
+    border-radius: 20px;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.signup button{
+    background: transparent;
+}
+.signin button:hover, .signup button:hover{
+    background: #349;
+}
+
+.signin button{
+    background: #219;
+    position: relative;
+    left: 25%;
+}
+
+.signin p{
+    color: grey;
+}
+
+.inputs{
+    text-align: start;
+    width: 80%;
+}
+
+
+.inputs input{
+    padding: 10px 0;
+    margin-bottom: 30px;
+    width: 100%;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid grey;
+}
+
+.inputs div{
+    position: relative;
+}
+
+.inputs div label{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    transition: .5s;
+    pointer-events: none;
+    color: grey;
+}
+
+.inputs input:focus ~ label,
+.inputs input:valid ~ label
+{
+    top: -10px;
+    font-size: 13px; 
+    color: #219;
+}
+
+.inputs input:focus{
+    border-bottom: 2px solid #219;
+}
+
+.midias{
+    display: flex;
+}
+
+.icon{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    line-height: 55px;
+    margin: 1px;
+    border: 1px solid grey;
+    box-shadow: 2px 2px 2px grey;
+    transition: .5s;
+}
+
+.icon i{
+    font-size: 25px;
+    transition: .5s;
+
+}
+
+.icon:hover{
+    background: #219;
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px black;
+
+}
+
+.icon:hover i{
+    color: white;
+}
+
+
+
+.arrows{
+    position: absolute;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    background: #219;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    top: 50%;
+    left: 40.85%;
+    color: white;
+    border: none;
+}
+
+.arrows::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    top: 0;
+    left: -50%;
+}
+
+.arrows i{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.arrows i:first-of-type{
+    z-index: 10;
+    color: #219;
+}
+
+
+
+@keyframes animate{
+    100%{
+        width: 92%;
+    }
+}
+
+@keyframes animateArrowRight{
+    100%{
+        left: 90%;
+    }
+}
+@keyframes animateArrowLeft{
+    100%{
+        left: 6%;
+    }
+}
+
+.signup.active{
+    animation-name: animate;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    z-index: 100;
+}
+
+.signin.active{
+    animation-name: animate;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    z-index: 100;
+}
+
+.arrows.right{
+    animation-name: animateArrowRight;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+.arrows.left{
+    animation-name: animateArrowLeft;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+@media (max-width: 800px){
+    .signin, .signup{
+        width: 100%;
+        position: relative;
+    }
+    .arrows{
+        display: none;
+    }
+}
+
+
+
